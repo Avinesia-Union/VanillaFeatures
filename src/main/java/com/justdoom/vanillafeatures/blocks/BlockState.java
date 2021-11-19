@@ -1,4 +1,4 @@
-/**package com.justdoom.vanillafeatures.blocks;
+package com.justdoom.vanillafeatures.blocks;
 
 import net.minestom.server.instance.block.Block;
 
@@ -31,7 +31,6 @@ public class BlockState {
         return blockId;
     }
 
-    /**
      * Return the value of the given property key
      * @param key the property key
      * @return the value of the property
@@ -49,7 +48,6 @@ public class BlockState {
         return properties;
     }
 
-    /**
      * Returns the block state corresponding to this state with a single property changed
      * @param key the key of the property to change
      * @param value the value of the property
@@ -65,4 +63,3 @@ public class BlockState {
         return Block.fromStateId(blockId)+"{"+props+"}";
     }
 }
-        **/
