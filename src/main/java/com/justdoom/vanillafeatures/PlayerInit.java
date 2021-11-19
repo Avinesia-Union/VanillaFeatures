@@ -4,7 +4,7 @@ public class PlayerInit {
 
     public PlayerInit(){
 
-        /**ConnectionManager connectionManager = MinecraftServer.getConnectionManager();
+        ConnectionManager connectionManager = MinecraftServer.getConnectionManager();
         connectionManager.addPlayerInitialization(player -> {
             if(VanillaFeatures.getInstance().root.node("block-drops", "enabled").getBoolean()) {
                 player.addEventCallback(PlayerBlockBreakEvent.class, event -> {
@@ -28,6 +28,6 @@ public class PlayerInit {
                 Vector velocity = player.getPosition().clone().getDirection().multiply(6);
                 itemEntity.setVelocity(velocity);
             });
-        });**/
+        });
     }
 }
