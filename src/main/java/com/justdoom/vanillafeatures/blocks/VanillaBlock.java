@@ -1,4 +1,4 @@
-/**package com.justdoom.vanillafeatures.blocks;
+package com.justdoom.vanillafeatures.blocks;
 
 import net.minestom.server.data.Data;
 import net.minestom.server.entity.Player;
@@ -50,7 +50,6 @@ public abstract class VanillaBlock extends CustomBlock {
         return baseBlock;
     }
 
-    /**
      * Create data for this block
      *
      * @param blockPosition
@@ -77,7 +76,6 @@ public abstract class VanillaBlock extends CustomBlock {
 
     }
 
-    /**
      * Interact with this block, depending on properties
      *
     @Override
@@ -102,8 +100,6 @@ public abstract class VanillaBlock extends CustomBlock {
     public short getVisualBlockForPlacement(Player player, Player.Hand hand, BlockPosition blockPosition) {
         return getBaseBlockId();
     }
-
-    /**
      * Loads the BlockEntity information from the given NBT, during world loading from the Anvil format.
      * Should be stored in the Data object returned by this function.
      * It is allowed (and encouraged) to modify 'originalData' and returning it.
@@ -124,4 +120,3 @@ public abstract class VanillaBlock extends CustomBlock {
         return blockStates;
     }
 }
-        **/
