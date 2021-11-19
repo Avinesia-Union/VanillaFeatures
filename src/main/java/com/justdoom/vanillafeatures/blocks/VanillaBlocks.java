@@ -41,13 +41,6 @@ public enum VanillaBlocks {
         this.blockSupplier = blockSupplier;
         this.placementRule = placementRule;
     }
-
-    /**
-     * Register this vanilla block to the given BlockManager, ConnectionManager is used to replace the basic block with its custom variant
-     *
-     * @param connectionManager
-     * @param blockManager
-     */
     public void register(short customBlockID, ConnectionManager connectionManager, BlockManager blockManager) {
         VanillaBlock block = this.blockSupplier.create();
         connectionManager.addPlayerInitialization(player -> {
@@ -67,26 +60,14 @@ public enum VanillaBlocks {
         registered = true;
     }
 
-     * Used to know if this block has been registered. Can be used to disable mechanics if this block is not registered (ie nether portals and nether portal blocks)
-     *
-     * @return
-     *
     public boolean isRegistered() {
         return registered;
     }
 
-     * Gets this block instance. 'null' if this block has not been registered
-     *
-     * @return
-     *
     public VanillaBlock getInstance() {
         return instance;
     }
 
-     * Register all vanilla commands into the given blockManager. ConnectionManager is used to replace the basic block with its custom counterpart
-     *
-     * @param blockManager
-     *
     public static void registerAll(ConnectionManager connectionManager, BlockManager blockManager) {
         for (VanillaBlocks vanillaBlock : values()) {
             vanillaBlock.register((short) vanillaBlock.ordinal(), connectionManager, blockManager);
