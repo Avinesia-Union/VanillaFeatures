@@ -25,9 +25,6 @@ public class BlockPropertyList {
         }
 
     }
-     * Returns all possible combinations of properties from this list
-     * @return
-     *
     public List<String[]> getCartesianProduct() {
         if(properties.isEmpty()) {
             return Collections.emptyList();
@@ -63,13 +60,6 @@ public class BlockPropertyList {
         }
     }
 
-    /**
-     * Defines an int range property. Bounds are inclusive
-     * @param key
-     * @param rangeStart
-     * @param rangeEnd
-     * @return
-     *
     public BlockPropertyList intRange(String key, int rangeStart, int rangeEnd) {
         assert rangeStart <= rangeEnd;
         String[] values = new String[rangeEnd-rangeStart+1];
