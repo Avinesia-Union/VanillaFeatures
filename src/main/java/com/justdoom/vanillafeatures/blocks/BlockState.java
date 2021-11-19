@@ -31,11 +31,6 @@ public class BlockState {
         return blockId;
     }
 
-     * Return the value of the given property key
-     * @param key the property key
-     * @return the value of the property
-     * @throws IllegalArgumentException if the key does not correspond to an existing property
-     *
     public String get(String key) {
         String result = properties.get(key);
         if(result == null) {
@@ -48,11 +43,6 @@ public class BlockState {
         return properties;
     }
 
-     * Returns the block state corresponding to this state with a single property changed
-     * @param key the key of the property to change
-     * @param value the value of the property
-     * @return the corresponding blockstate (they are pooled inside this blockstate's parent BlockStates)
-     *
     public BlockState with(String key, String value) {
         return parent.getStateWithChange(properties, key, value);
     }
