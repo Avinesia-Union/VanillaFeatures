@@ -1,4 +1,4 @@
-/**package com.justdoom.vanillafeatures.blocks;
+package com.justdoom.vanillafeatures.blocks;
 
 import it.unimi.dsi.fastutil.shorts.Short2ObjectOpenHashMap;
 import net.minestom.server.instance.Instance;
@@ -13,7 +13,6 @@ public class BlockStates {
 
     private final List<BlockState> states;
 
-    /**
      * Map that stores a comma-separated list of properties, sorted by alphabetical order as key,
      * and the corresponding block state as value
      *
@@ -26,7 +25,6 @@ public class BlockStates {
         this.states = new LinkedList<>();
     }
 
-    /**
      * Adds a new blockstate to the known ones
      *
     void add(BlockState blockState) {
@@ -38,7 +36,6 @@ public class BlockStates {
         idLookup.put(blockState.getBlockId(), blockState);
     }
 
-    /**
      * Gets a BlockState based on the given properties
      * the value 'value'
      * @param properties
@@ -52,7 +49,6 @@ public class BlockStates {
         return nameLookup.get(lookupKey);
     }
 
-    /**
      * Gets a BlockState based on its protocol id. Return {@link #getDefault()} if none found
      * @param id
      * @return
@@ -61,7 +57,6 @@ public class BlockStates {
         return idLookup.getOrDefault(id, getDefault());
     }
 
-    /**
      * Gets a BlockState based on the given properties, with the property corresponding to 'key' being changed to have
      * the value 'value'
      * @param properties
@@ -87,7 +82,6 @@ public class BlockStates {
         return states.get(0);
     }
 
-    /**
      * Returns the corresponding BlockState at the given position.
      * Can return null if it does not correspond to any known state.
      * @param instance
@@ -100,4 +94,3 @@ public class BlockStates {
         return getState(alternative.createPropertiesMap());
     }
 }
- **/
